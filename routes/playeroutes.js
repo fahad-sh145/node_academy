@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const Player =require('./../models/player');
-const { route } = require('./personroutes');
+const player =require('../models/player');
+
 
 
 
@@ -28,7 +28,7 @@ router.post('/', async(req, res)=>{
 router.get('/' ,async(req,res)=>{
     try{
 
-        const data =  await Player.find();
+        const data =  await player.find();
            console.log('data saved');
         res.status(200).json(data);
 
