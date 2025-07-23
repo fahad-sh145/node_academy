@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Person =require('../models/person');
+const person =require('../models/person');
 
 
 router.post('/',async(req ,res)=>{
@@ -14,7 +14,7 @@ router.post('/',async(req ,res)=>{
         
         //create a new person using the mongoose model
         
-        const newperson = new Person(data);
+        const newperson = new person(data);
         
         
         //save the new person to the database
@@ -54,7 +54,7 @@ router.get('/:fahad' , async(req ,res)=>{
         const fahad = req.params.fahad; 
         if(fahad =='frontend' || fahad == 'backend' || fahad =='database'){
 
-            const response =  await Person.find({work:fahad});
+            const response =  await person.find({work:fahad});
           console.log('data saved');
 
             res.status(200).json(response);
