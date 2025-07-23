@@ -4,11 +4,14 @@ const app =express();
  
 const db = require('./db');
 
+require('dotenv').config();
+
 
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 4000;
 
 
 // const Person =require('./models/person');
@@ -169,6 +172,10 @@ app.use('/player' ,Playerroutes);
 
 
 
-app.listen(4000,()=>{
+app.listen(PORT,()=>{
     console.log(" i am still alive");  //check whether server is working or not
 });
+
+// app.listen(4000,()=>{
+//     console.log(" i am still alive");  //check whether server is working or not
+// });
