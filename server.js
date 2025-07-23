@@ -159,7 +159,7 @@ app.get('/rohit' ,(req ,res)=>{
 
 
 
-const Personroutes = require('./routes/personRoutes');
+const Personroutes = require('./routes/personroutes');
 const Playerroutes = require('./routes/playeroutes');
 
 app.use('/person' ,Personroutes);

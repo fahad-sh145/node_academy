@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Person =require('./../models/person');
+const Person =require('../models/person');
 
 
 router.post('/',async(req ,res)=>{
@@ -14,12 +14,12 @@ router.post('/',async(req ,res)=>{
         
         //create a new person using the mongoose model
         
-        const newPerson = new Person(data);
+        const newperson = new Person(data);
         
         
         //save the new person to the database
         
-        const response = await newPerson.save();
+        const response = await newperson.save();
         console.log('data saved');
         res.status(200).json(response);
     }
@@ -35,7 +35,7 @@ router.post('/',async(req ,res)=>{
 router.get('/', async(req ,res)=>{
     try{
 
-        const data =  await Person.find();
+        const data =  await person.find();
           console.log('data saved');
         res.status(200).json(data);
     }
